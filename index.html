@@ -35,9 +35,9 @@
         .divider { width: 3rem; height: 1px; background: var(--gold); margin: 1.5rem 0; }
         .divider.center { margin: 1.5rem auto; }
 
-        .btn-gold { display: inline-block; background: var(--gold); color: var(--black); padding: 0.9rem 2.5rem; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--gold); transition: var(--ease); cursor: pointer; }
+        .btn-gold { display: inline-block; background: var(--gold); color: var(--black); padding: 0.9rem 2.5rem; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid var(--gold); transition: var(--ease); cursor: pointer; text-align: center; }
         .btn-gold:hover { background: transparent; color: var(--gold); }
-        .btn-outline { display: inline-block; background: transparent; color: var(--white); padding: 0.9rem 2.5rem; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.35); transition: var(--ease); }
+        .btn-outline { display: inline-block; background: transparent; color: var(--white); padding: 0.9rem 2.5rem; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.35); transition: var(--ease); text-align: center; }
         .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
         /* REVEAL */
@@ -217,7 +217,7 @@
         .wa-float { position: fixed; bottom: 2rem; right: 2rem; width: 52px; height: 52px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: white; z-index: 900; box-shadow: 0 4px 18px rgba(37,211,102,0.38); transition: transform 0.3s, box-shadow 0.3s; }
         .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 26px rgba(37,211,102,0.58); }
 
-        /* RESPONSIVE */
+        /* RESPONSIVE OVERRIDES */
         @media (max-width: 1024px) {
             .about-grid { grid-template-columns: 1fr; gap: 3rem; }
             .about-badge { right: 1rem; }
@@ -435,88 +435,102 @@
             <div class="g-item reveal" onclick="openLb('luxuryroom.jpg')"><img src="luxuryroom.jpg" alt="Luxury Room"><div class="g-overlay"><i class="fas fa-expand"></i></div></div>
             <div class="g-item reveal" onclick="openLb('suiteroom.jpg')"><img src="suiteroom.jpg" alt="Suite Room"><div class="g-overlay"><i class="fas fa-expand"></i></div></div>
             <div class="g-item reveal" onclick="openLb('deluxeroom.jpg')"><img src="deluxeroom.jpg" alt="Deluxe Room"><div class="g-overlay"><i class="fas fa-expand"></i></div></div>
-            <div class="g-item reveal" onclick="openLb('logo.jpeg')" style="background:#111;"><img src="logo.jpeg" alt="Brand" style="object-fit:contain;"><div class="g-overlay"><i class="fas fa-expand"></i></div></div>
         </div>
     </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="lb-close" onclick="closeLb()">&times;</span>
+    <img id="lbImg" src="" alt="Enlarged view">
+</div>
 
 <!-- AMENITIES -->
 <section id="amenities">
     <div class="container">
         <div class="section-header reveal">
-            <span class="section-label">Facilities</span>
+            <span class="section-label">Services</span>
             <h2 class="section-title">World-Class Amenities</h2>
             <div class="divider center"></div>
         </div>
-    </div>
-    <div class="amenities-grid">
-        <div class="amenity-card reveal"><div class="amenity-icon"><i class="fas fa-wifi"></i></div><div class="amenity-name">High-Speed Wi-Fi</div></div>
-        <div class="amenity-card reveal"><div class="amenity-icon"><i class="fas fa-utensils"></i></div><div class="amenity-name">Fine Dining</div></div>
-        <div class="amenity-card reveal"><div class="amenity-icon"><i class="fas fa-square-parking"></i></div><div class="amenity-name">Valet Parking</div></div>
-        <div class="amenity-card reveal"><div class="amenity-icon"><i class="fas fa-shield-halved"></i></div><div class="amenity-name">24/7 Security</div></div>
-        <div class="amenity-card reveal"><div class="amenity-icon"><i class="fas fa-bolt"></i></div><div class="amenity-name">Power Backup</div></div>
-        <div class="amenity-card reveal"><div class="amenity-icon"><i class="fas fa-concierge-bell"></i></div><div class="amenity-name">Room Service</div></div>
-        <div class="amenity-card reveal"><div class="amenity-icon"><i class="fas fa-snowflake"></i></div><div class="amenity-name">Central AC</div></div>
-        <div class="amenity-card reveal"><div class="amenity-icon"><i class="fas fa-calendar-check"></i></div><div class="amenity-name">Event Planning</div></div>
+        <div class="amenities-grid">
+            <div class="amenity-card reveal">
+                <div class="amenity-icon"><i class="fas fa-wind"></i></div>
+                <span class="amenity-name">100% AC</span>
+            </div>
+            <div class="amenity-card reveal">
+                <div class="amenity-icon"><i class="fas fa-utensils"></i></div>
+                <span class="amenity-name">Multi-Cuisine</span>
+            </div>
+            <div class="amenity-card reveal">
+                <div class="amenity-icon"><i class="fas fa-car"></i></div>
+                <span class="amenity-name">Valet Parking</span>
+            </div>
+            <div class="amenity-card reveal">
+                <div class="amenity-icon"><i class="fas fa-wifi"></i></div>
+                <span class="amenity-name">Free Wi-Fi</span>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
     <div class="container">
-        <div class="section-header reveal">
-            <span class="section-label">Get In Touch</span>
-            <h2 class="section-title">Plan Your Experience</h2>
-            <div class="divider center"></div>
-        </div>
         <div class="contact-grid">
-            <div class="reveal">
-                <p>Whether you're planning a dream wedding, a corporate event, or a relaxing getaway, our team is ready to make it extraordinary.</p>
+            <div class="contact-info reveal">
+                <span class="section-label">Connect</span>
+                <h2 class="section-title">Plan Your Stay</h2>
+                <div class="divider"></div>
+                <p>Have questions regarding room bookings, event dates, or catering menus? Get in touch with our team directly, or drop your details here.</p>
+                
                 <div class="c-detail">
-                    <div class="c-icon"><i class="fas fa-location-dot"></i></div>
-                    <div class="c-text"><strong>Address</strong>Near Bhadrakali Bund Entrance,<br>Hunter Road, Warangal,<br>Telangana, India</div>
+                    <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="c-text"><strong>Location</strong>Near Bhadrakali Bund Entrance, Hunter Road, Warangal</div>
                 </div>
                 <div class="c-detail">
-                    <div class="c-icon"><i class="fas fa-phone"></i></div>
-                    <div class="c-text"><strong>Phone</strong>+91 8897245350<br>+91 9869823945</div>
+                    <div class="c-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="c-text"><strong>Reservations</strong>+91 98765 43210</div>
                 </div>
                 <div class="c-detail">
                     <div class="c-icon"><i class="fas fa-envelope"></i></div>
-                    <div class="c-text"><strong>Email</strong>hindustanhotels@gmail.com</div>
+                    <div class="c-text"><strong>Email</strong>info@hindustanhotels.com</div>
                 </div>
+
                 <div class="c-socials">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/918897245350"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
+
             <div class="contact-form reveal">
-                <h3 class="form-title">Reservation & Inquiry</h3>
-                <p class="form-sub">Fill in the form and we'll get back to you within 24 hours.</p>
-                <form action="#" method="POST">
-                    <div class="form-row">
-                        <div class="form-group"><label>Full Name *</label><input type="text" required placeholder="Your name"></div>
-                        <div class="form-group"><label>Contact Number *</label><input type="tel" required placeholder="+91 XXXXX XXXXX"></div>
+                <h3 class="form-title">Booking Inquiry</h3>
+                <p class="form-sub">We usually respond within 24 business hours.</p>
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Thank you for your inquiry! Our team will contact you shortly.');">
+                    <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" placeholder="John Doe" required>
                     </div>
                     <div class="form-row">
-                        <div class="form-group"><label>Email Address</label><input type="email" placeholder="you@email.com"></div>
-                        <div class="form-group"><label>Event / Stay Date</label><input type="date"></div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="+91..." required>
+                        </div>
+                        <div class="form-group">
+                            <label>Inquiry Type</label>
+                            <select>
+                                <option>Room Reservation</option>
+                                <option>Banquet Hall Booking</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label>Inquiry Type</label>
-                        <select>
-                            <option>Hotel Room Reservation</option>
-                            <option>Banquet Hall — Wedding / Reception</option>
-                            <option>Corporate Event / Conference</option>
-                            <option>Birthday / Private Party</option>
-                            <option>Other</option>
-                        </select>
+                        <label>Special Notes</label>
+                        <textarea rows="4" placeholder="Tell us about your event dates or custom room requests..."></textarea>
                     </div>
-                    <div class="form-group">
-                        <label>Message / Requirements</label>
-                        <textarea rows="4" placeholder="Estimated guest count, catering preferences, special requests..."></textarea>
-                    </div>
-                    <button type="submit" class="form-submit">Send Inquiry &rarr;</button>
+                    <button type="submit" class="form-submit">Submit Inquiry</button>
                 </form>
             </div>
         </div>
@@ -530,132 +544,154 @@
             <div class="footer-brand">
                 <span class="brand">HINDUSTAN</span>
                 <span class="sub">Hotels & Banquet Hall</span>
-                <p>Warangal's premier destination for luxury stays and grand celebrations. Where tradition meets elegance.</p>
+                <p>Exemplary hospitality crafted right in the historical heart of Warangal. Elevate your milestones and travels with us.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#banquet">The Banquet</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
             </div>
             <div class="footer-col">
                 <h5>Quick Links</h5>
                 <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#rooms">Our Rooms</a></li>
-                    <li><a href="#banquet">Banquet Hall</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Contact</h5>
-                <ul>
-                    <li><a href="tel:+918897245350">+91 8897245350</a></li>
-                    <li><a href="tel:+919869823945">+91 9869823945</a></li>
-                    <li><a href="mailto:hindustanhotels@gmail.com">hindustanhotels@gmail.com</a></li>
-                    <li><a href="#contact">Hunter Road, Warangal</a></li>
+                    <li><a href="#contact">Contact Support</a></li>
+                    <li><a href="#amenities">Core Amenities</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <span class="footer-copy">&copy; 2026 Hindustan Hotels & Banquet Hall. All rights reserved.</span>
-            <div class="c-socials">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/918897245350"><i class="fab fa-whatsapp"></i></a>
-            </div>
+            <span class="footer-copy">&copy; 2026 Hindustan Hotels. All Rights Reserved.</span>
         </div>
     </div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/918897245350" class="wa-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
+<!-- WHATSAPP FLOATING HUB -->
+<a href="https://wa.me/919876543210" class="wa-float" target="_blank" aria-label="Chat on WhatsApp">
     <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-    <span class="lb-close" id="lbClose">&times;</span>
-    <img src="" alt="" id="lbImg">
-</div>
-
+<!-- JAVASCRIPT REPAIRED HUB -->
 <script>
-    // NAV SCROLL
+    // 1. Navbar Scroll Transformation
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 60);
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
 
-    // HERO SLIDER
+    // 2. Mobile Burger Toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileClose = document.getElementById('mobileClose');
+    const mobLinks = document.querySelectorAll('.mob-link');
+
+    const toggleMenu = () => {
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+    };
+
+    hamburger.addEventListener('click', toggleMenu);
+    mobileClose.addEventListener('click', toggleMenu);
+    mobLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+    // 3. Automated Luxury Hero Carousel
     const slides = document.querySelectorAll('.hero-slide');
     const dots = document.querySelectorAll('.hero-dot');
-    let cur = 0, sliderTimer;
-    function goTo(n) {
-        slides[cur].classList.remove('active');
-        dots[cur].classList.remove('active');
-        cur = (n + slides.length) % slides.length;
-        slides[cur].classList.add('active');
-        dots[cur].classList.add('active');
+    let currentSlide = 0;
+    let slideInterval;
+
+    function changeSlide(idx) {
+        slides.forEach(s => s.classList.remove('active'));
+        dots.forEach(d => d.classList.remove('active'));
+        slides[idx].classList.add('active');
+        dots[idx].classList.add('active');
+        currentSlide = idx;
     }
-    function startSlider() { sliderTimer = setInterval(() => goTo(cur + 1), 5000); }
-    dots.forEach(d => d.addEventListener('click', () => { clearInterval(sliderTimer); goTo(+d.dataset.idx); startSlider(); }));
-    startSlider();
 
-    // MOBILE MENU
-    const hbg = document.getElementById('hamburger');
-    const mob = document.getElementById('mobileMenu');
-    const mobClose = document.getElementById('mobileClose');
-    function openMenu() { hbg.classList.add('open'); mob.classList.add('open'); document.body.style.overflow = 'hidden'; }
-    function closeMenu() { hbg.classList.remove('open'); mob.classList.remove('open'); document.body.style.overflow = ''; }
-    hbg.addEventListener('click', openMenu);
-    mobClose.addEventListener('click', closeMenu);
-    document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeMenu));
+    function nextSlide() {
+        let next = (currentSlide + 1) % slides.length;
+        changeSlide(next);
+    }
 
-    // SCROLL REVEAL
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    function startSlider() {
+        slideInterval = setInterval(nextSlide, 5000);
+    }
 
-    // COUNTER
-    const counterObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (!e.isIntersecting) return;
-            const target = +e.target.dataset.count;
-            let n = 0;
-            const step = target / 55;
-            const t = setInterval(() => {
-                n = Math.min(n + step, target);
-                e.target.textContent = Math.floor(n) + (target >= 100 ? '+' : '');
-                if (n >= target) clearInterval(t);
-            }, 18);
-            counterObs.unobserve(e.target);
-        });
-    }, { threshold: 0.6 });
-    document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
-
-    // ACTIVE NAV
-    const sections = document.querySelectorAll('section[id]');
-    const navAs = document.querySelectorAll('[data-nav]');
-    window.addEventListener('scroll', () => {
-        let sy = window.scrollY;
-        sections.forEach(s => {
-            if (sy >= s.offsetTop - 120 && sy < s.offsetTop + s.offsetHeight - 120) {
-                navAs.forEach(a => a.classList.remove('active'));
-                const m = document.querySelector(`[href="#${s.id}"][data-nav]`);
-                if (m) m.classList.add('active');
-            }
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            clearInterval(slideInterval);
+            let index = parseInt(e.target.getAttribute('data-idx'));
+            changeSlide(index);
+            startSlider();
         });
     });
+    startSlider();
 
-    // LIGHTBOX
-    function openLb(src) {
-        document.getElementById('lbImg').src = src;
-        document.getElementById('lightbox').classList.add('open');
-        document.body.style.overflow = 'hidden';
+    // 4. Smooth Intersection Reveal Animations
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // 5. Counting Animation for Statistics Strip
+    const statNumbers = document.querySelectorAll('.strip-stat .num');
+    const statsSection = document.getElementById('strip');
+    let counted = false;
+
+    function startCounter() {
+        statNumbers.forEach(num => {
+            const target = parseInt(num.getAttribute('data-count'));
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    num.innerText = target;
+                    clearInterval(timer);
+                } else {
+                    num.innerText = Math.floor(current);
+                }
+            }, 30);
+        });
     }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !counted) {
+            counted = true;
+            startCounter();
+            statsObserver.unobserve(statsSection);
+        }
+    }, { threshold: 0.2 });
+
+    statsObserver.observe(statsSection);
+
+    // 6. Interactive Gallery Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+
+    function openLb(imgSrc) {
+        lbImg.src = imgSrc;
+        lightbox.classList.add('open');
+    }
+
     function closeLb() {
-        document.getElementById('lightbox').classList.remove('open');
-        document.body.style.overflow = '';
+        lightbox.classList.remove('open');
     }
-    document.getElementById('lbClose').addEventListener('click', closeLb);
-    document.getElementById('lightbox').addEventListener('click', e => { if (e.target === e.currentTarget) closeLb(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 </script>
 </body>
 </html>
